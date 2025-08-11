@@ -1,12 +1,13 @@
-package com.example.ozinshe
+package com.example.ozinshe.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.ozinshe.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

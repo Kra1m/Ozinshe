@@ -1,12 +1,9 @@
-package com.example.ozinshe
+package com.example.ozinshe.presentation
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.ozinshe.R
 import com.example.ozinshe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
