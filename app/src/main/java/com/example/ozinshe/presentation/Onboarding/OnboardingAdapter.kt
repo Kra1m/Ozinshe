@@ -20,7 +20,7 @@ class OnboardingAdapter(): RecyclerView.Adapter<OnboardingAdapter.OnboardingView
         RecyclerView.ViewHolder(binding.root)  {
         fun bindItem(item: OnboardingModel){
             binding.tvTitleOnboarding.text = item.title
-            binding.tvDescOnboarding.text = item.title
+            binding.tvDescOnboarding.text = item.description
             binding.imgTvOnboarding.setImageResource(item.imageId)
         }
 

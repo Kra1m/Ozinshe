@@ -45,10 +45,14 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.ozinshe.presentation.RegistrationFragment"
+        android:name="com.example.ozinshe.presentation.registeration.RegistrationFragment"
         android:label="RegistrationFragment" >
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
