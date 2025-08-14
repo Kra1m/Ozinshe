@@ -7,7 +7,7 @@
     tools:context=".presentation.login.LoginFragment">
 
     <ImageButton
-        android:id="@+id/btnBackLogin"
+        android:id="@+id/btnBackRegistration"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_back"
@@ -19,15 +19,15 @@
         />
 
     <TextView
-        android:id="@+id/textSalemLogin"
+        android:id="@+id/textTirkeluRegistration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sf_pro_display_bold_700"
-        android:text="Сәлем"
+        android:text="Тіркелу"
         android:textColor="@color/grey_900"
         android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="@+id/btnBackLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnBackLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnBackRegistration"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackRegistration"
         android:layout_marginTop="24dp"
         />
     <TextView
@@ -35,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sf_pro_display_regular_400"
-        android:text="Аккаунтқа кіріңіз"
+        android:text="Деректерді толтырыңыз"
         android:textColor="@color/grey_500"
         android:textSize="16dp"
         android:layout_marginTop="0dp"
-        app:layout_constraintStart_toStartOf="@+id/textSalemLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textSalemLogin"
+        app:layout_constraintStart_toStartOf="@+id/textTirkeluRegistration"
+        app:layout_constraintTop_toBottomOf="@+id/textTirkeluRegistration"
         />
 
 
@@ -136,20 +136,46 @@
         app:layout_constraintEnd_toEndOf="@id/textInputPassword"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnForgotPasswordLogin"
+    <TextView
+        android:id="@+id/textPasswordLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
         android:fontFamily="@font/sf_pro_display_bold_700"
-        android:text="Құпия сөзді ұмыттыңыз ба?"
-        android:textColor="@color/primary_300"
-        android:background="@color/transparent"
+        android:text="Құпия сөзді қайталаңыз"
+        android:textColor="@color/grey_900"
         android:textSize="14dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/textInputPassword"/>
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="@+id/textInputPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textInputPassword" />
 
+    <EditText
+        android:id="@+id/textInputPassword2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background_edittext_focus_action_12dp"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="8dp"
+        android:hint="Сіздің құпия сөзіңіз"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="16dp"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/grey_400"
+        app:layout_constraintEnd_toEndOf="@+id/textInputPassword"
+        app:layout_constraintStart_toStartOf="@+id/textInputPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin2" />
+
+    <ImageButton
+        android:id="@+id/btnShowPasswordLogin2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_show_password"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintTop_toTopOf="@id/textInputPassword2"
+        app:layout_constraintBottom_toBottomOf="@id/textInputPassword2"
+        app:layout_constraintEnd_toEndOf="@id/textInputPassword2"
+        />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -157,7 +183,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnForgotPasswordLogin">
+        app:layout_constraintTop_toBottomOf="@+id/textInputPassword2">
 
         <TextView
             android:id="@+id/textErrorServerExistingEmail"
@@ -173,7 +199,7 @@
             android:textSize="14dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="bottom"
@@ -182,7 +208,7 @@
             android:background="@drawable/background_btn_12dp"
             android:fontFamily="@font/sf_pro_display_semibold_600"
             android:gravity="center"
-            android:text="Кіру"
+            android:text="Тіркелу"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16dp"/>
@@ -203,17 +229,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular_400"
-                android:text="Аккаунтыныз жоқ па?"
+                android:text="Сізде аккаунт бар ма?"
                 android:textColor="@color/grey_500"
                 android:textSize="14dp"/>
-
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCreateNewLogin"
+                android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
                 android:textAllCaps="false"
                 android:background="@color/transparent"
-                android:fontFamily="@font/sf_pro_display_semibold_600"
                 android:text="Тіркелу"
                 android:textColor="@color/primary_300"
                 android:textSize="14dp"/>
@@ -223,4 +248,4 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-    
+
