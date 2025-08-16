@@ -1,5 +1,6 @@
 package com.example.ozinshe.presentation.login
 
+import android.content.Context
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -7,11 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ozinshe.R
+import com.example.ozinshe.data.SharedProvider
 import com.example.ozinshe.databinding.FragmentLoginBinding
+import com.example.ozinshe.provideNavigationHost
 
 class LoginFragment : Fragment() {
 
@@ -32,7 +36,14 @@ class LoginFragment : Fragment() {
         viewModel.loginResponse.observe(viewLifecycleOwner){
             binding.textErrorServerExistingEmail.visibility = View.GONE
             Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
-            it.accessToken
+
+//            val sharedPref = requireContext().getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+//            sharedPref.edit {
+//                putString("accessToken", it.accessToken)
+//            }
+
+            SharedProvider(requireContext()).saveToken(it.accessToken)
+
 
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
@@ -62,6 +73,7 @@ class LoginFragment : Fragment() {
         binding.btnCreateNewLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
+
 
     }
 

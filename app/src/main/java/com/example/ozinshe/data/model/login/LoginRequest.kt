@@ -1,4 +1,4 @@
-package com.example.ozinshe.data.model
+package com.example.ozinshe.data.model.login
 
 data class LoginRequest(
     val email: String,

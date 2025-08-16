@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.ozinshe.data.OnboardingInfoList
 import com.example.ozinshe.databinding.FragmentOnboardingBinding
 import com.example.ozinshe.R
+import com.example.ozinshe.provideNavigationHost
 
 class OnboardingFragment : Fragment() {
     private lateinit var binding: FragmentOnboardingBinding
@@ -24,6 +25,10 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        provideNavigationHost()?.apply {
+            setNavigationVisibility(false)
+        }
 
         val adapter = OnboardingAdapter()
         adapter.submitList(OnboardingInfoList.onboardingModelList)

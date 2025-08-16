@@ -1,5 +1,4 @@
-package com.example.ozinshe.data.model
-
+package com.example.ozinshe.data.model.login
 
 import com.google.gson.annotations.SerializedName
 

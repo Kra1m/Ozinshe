@@ -1,4 +1,4 @@
-package com.example.ozinshe.presentation.login
+package com.example.ozinshe.presentation.home
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -9,25 +9,24 @@ import com.example.ozinshe.data.ApiService
 import com.example.ozinshe.data.ServiceBuilder
 import com.example.ozinshe.data.model.login.LoginRequest
 import com.example.ozinshe.data.model.login.LoginResponse
+import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 
-class LoginViewModel(): ViewModel()  {
-
-    private var _loginResponse: MutableLiveData<LoginResponse> = MutableLiveData()
-    val loginResponse: LiveData<LoginResponse> = _loginResponse
+class HomeViewModel: ViewModel() {
+    private var _mainMoviesResponse: MutableLiveData<MainMoviesResponse> = MutableLiveData()
+    val mainMoviesResponse: LiveData<MainMoviesResponse> = _mainMoviesResponse
 
     private var _errorResponse: MutableLiveData<String> = MutableLiveData()
     val errorResponse: LiveData<String> = _errorResponse
 
 
-    fun loginUser(email: String, password: String){
+    fun getMainMovies(token: String){
         viewModelScope.launch(Dispatchers.IO) {
             val response = ServiceBuilder.buildService(ApiService::class.java)
-            runCatching { response.loginUser(LoginRequest(email, password)) }
+            runCatching { response.getMainMovies("Bearer $token") }
                 .onSuccess{
-                    _loginResponse.postValue(it)
+                    _mainMoviesResponse.postValue(it)
                 }
                 .onFailure {
                     _errorResponse.postValue(it.message)
@@ -35,4 +34,6 @@ class LoginViewModel(): ViewModel()  {
 
         }
     }
+
+
 }

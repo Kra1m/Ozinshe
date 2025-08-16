@@ -1,5 +1,6 @@
 package com.example.ozinshe.presentation.registeration
 
+import android.content.Context
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -13,6 +14,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.ozinshe.R
 import com.example.ozinshe.databinding.FragmentRegistrationBinding
 import com.example.ozinshe.presentation.login.LoginViewModel
+import androidx.core.content.edit
+import com.example.ozinshe.data.SharedProvider
+import com.example.ozinshe.provideNavigationHost
 
 class RegistrationFragment : Fragment() {
 
@@ -34,7 +38,13 @@ class RegistrationFragment : Fragment() {
         viewModel.signupResponse.observe(viewLifecycleOwner){
             binding.textErrorServerExistingEmail.visibility = View.GONE
             Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
-            it.accessToken
+
+//            val sharedPref = requireContext().getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+//            sharedPref.edit {
+//                putString("accessToken", it.accessToken)
+//            }
+            SharedProvider(requireContext()).saveToken(it.accessToken)
+
 
             findNavController().navigate(R.id.action_registrationFragment_to_homeFragment)
         }
@@ -63,7 +73,7 @@ class RegistrationFragment : Fragment() {
             val passwordIsValid = validationPassword(password)
 
             if (emailIsValid && passwordIsValid){
-                viewModel.registerUser(email, password)
+                viewModel.registerUser(email, password )
             }else{
                 validationEmail(emailIsValid)
             }
