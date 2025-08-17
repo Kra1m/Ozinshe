@@ -12,7 +12,6 @@ import com.example.ozinshe.databinding.ItemMainMoviesBinding
 import okhttp3.EventListener
 
 class MainMovieAdapter: RecyclerView.Adapter<MainMovieAdapter.MainMovieHolder>() {
-
     private val diffCallback = object : DiffUtil.ItemCallback<MainMoviesResponseItem>(){
         override fun areItemsTheSame(
             oldItem: MainMoviesResponseItem,
@@ -30,14 +29,15 @@ class MainMovieAdapter: RecyclerView.Adapter<MainMovieAdapter.MainMovieHolder>()
 
     }
 
-    private var listenerClickOnItem : RcViewMainMoviesCallback? = null
+    private var listenerClickAtItem : RcViewMainMoviesCallback? = null
 
     fun setOnMovieClickListener(listener: RcViewMainMoviesCallback){
-        this.listenerClickOnItem = listener
+        this.listenerClickAtItem = listener
     }
 
 
-    inner class MainMovieHolder(private var binding: ItemMainMoviesBinding): RecyclerView.ViewHolder(binding.root){
+    inner class MainMovieHolder(private var binding: ItemMainMoviesBinding):
+        RecyclerView.ViewHolder(binding.root){
         fun bindItem(mainMovieItem: MainMoviesResponseItem){
             Glide.with(itemView.context)
                 .load(mainMovieItem.link)
@@ -47,7 +47,7 @@ class MainMovieAdapter: RecyclerView.Adapter<MainMovieAdapter.MainMovieHolder>()
             binding.tvTextTittle.text = mainMovieItem.movie.name
             binding.tvTextDescription.text = mainMovieItem.movie.description
             itemView.setOnClickListener {
-                listenerClickOnItem?.onClick(mainMovieItem.id)
+                listenerClickAtItem?.onClick(mainMovieItem.id)
             }
         }
     }
@@ -59,13 +59,12 @@ class MainMovieAdapter: RecyclerView.Adapter<MainMovieAdapter.MainMovieHolder>()
         differ.submitList(listMoviesMain)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MainMovieHolder {
+    override fun onCreateViewHolder( parent: ViewGroup, viewType: Int): MainMovieHolder {
         return MainMovieHolder(
             ItemMainMoviesBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false
+                LayoutInflater.from(parent.context),
+                parent,
+                false
             )
         )
     }

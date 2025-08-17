@@ -40,8 +40,8 @@ class HomeFragment : Fragment() {
 
         val token = SharedProvider(requireContext()).getToken()
         viewModel.getMainMovies(token)
-        val adapterMainMovie = MainMovieAdapter()
 
+        val adapterMainMovie = MainMovieAdapter()
         binding.rcMainMovies.adapter = adapterMainMovie
         viewModel.mainMoviesResponse.observe(viewLifecycleOwner){
             adapterMainMovie.submitList(it)

@@ -12,7 +12,7 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
-    @GET("/core/V1/movies")
+    @GET("/core/V1/movies_main")
     suspend fun getMainMovies(@Header("Authorization") token: String) : MainMoviesResponse
 
     @POST("/auth/V1/signin")
