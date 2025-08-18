@@ -10,12 +10,17 @@ import com.example.ozinshe.data.ServiceBuilder
 import com.example.ozinshe.data.model.login.LoginRequest
 import com.example.ozinshe.data.model.login.LoginResponse
 import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponse
+import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeViewModel: ViewModel() {
     private var _mainMoviesResponse: MutableLiveData<MainMoviesResponse> = MutableLiveData()
     val mainMoviesResponse: LiveData<MainMoviesResponse> = _mainMoviesResponse
+
+
+    private var _moviesByCategoryMainModel: MutableLiveData<MoviesByCategoryMainModel> = MutableLiveData()
+    val moviesByCategoryMainModel: LiveData<MoviesByCategoryMainModel> = _moviesByCategoryMainModel
 
     private var _errorResponse: MutableLiveData<String> = MutableLiveData()
     val errorResponse: LiveData<String> = _errorResponse
@@ -35,5 +40,17 @@ class HomeViewModel: ViewModel() {
         }
     }
 
+    fun getMoviesByCategoryMain(token: String){
+        viewModelScope.launch (Dispatchers.IO) {
+            val response = ServiceBuilder.buildService(ApiService::class.java)
+            runCatching { response.getMainMoviesByCategory("Bearer $token") }
+                .onSuccess {
+                    _moviesByCategoryMainModel.postValue(it)
+                }
+                .onFailure {
+                    _errorResponse.postValue(it.message)
+                }
+        }
+    }
 
 }

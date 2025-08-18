@@ -47,6 +47,18 @@ class HomeFragment : Fragment() {
             adapterMainMovie.submitList(it)
         }
 
+        val adapterMoviesByCategory = MoviesByCategoryMainAdapter()
+        viewModel.getMoviesByCategoryMain(token)
+        viewModel.moviesByCategoryMainModel.observe(viewLifecycleOwner){
+            binding.rcMainMoviesCategories1.adapter = adapterMoviesByCategory
+            binding.tvCategoryTitle1.text = it[0].categoryName
+            adapterMoviesByCategory.submitList(it[0].movies )
+
+            binding.rcMainMoviesCategories2.adapter = adapterMoviesByCategory
+            binding.tvCategoryTitle2.text = it[1].categoryName
+            adapterMoviesByCategory.submitList(it[1].movies)
+        }
+
     }
 
 }

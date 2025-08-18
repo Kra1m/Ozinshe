@@ -26,7 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/ic_logo_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,107 @@
             android:layout_marginTop="32dp"
             />
 
+        <LinearLayout
+            android:id="@+id/category_tittle_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/rc_main_movies"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            
+            <TextView
+                android:id="@+id/tv_category_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Trendiler"
+                android:textSize="16dp"
+                android:textColor="@color/primary_900"
+                android:fontFamily="@font/sf_pro_display_bold_700"
+                />
+
+            <TextView
+                android:id="@+id/tv_category_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Барлығы"
+                android:textSize="14dp"
+                android:textColor="@color/primary_300"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                />
 
 
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_main_movies_categories_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/category_tittle_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/category_tittle_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/rc_main_movies_categories_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tv_category_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Trendiler"
+                android:textSize="16dp"
+                android:textColor="@color/primary_900"
+                android:fontFamily="@font/sf_pro_display_bold_700"
+                />
+
+            <TextView
+                android:id="@+id/tv_category_more_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Барлығы"
+                android:textSize="14dp"
+                android:textColor="@color/primary_300"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_main_movies_categories_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/category_tittle_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
