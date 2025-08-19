@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.about.AboutFragment">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <ImageView
+        android:id="@+id/imageMovieAbout"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:background="@color/primary_900"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/overlay_about"
+            android:backgroundTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <ImageButton
+            android:id="@+id/btnBackAbout"
+            android:layout_width="16dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/white"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/btnBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="@id/btnPlayAbout"
+            app:layout_constraintEnd_toStartOf="@id/btnPlayAbout"
+            >
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_bookmark_unselected"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Тізімге қосу"
+                android:gravity="center"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:textColor="@color/grey_400"
+                android:textSize="12dp"
+
+                />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/btnPlayAbout"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/ic_play"
+            android:layout_marginTop="222dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/btnShareLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="@id/btnPlayAbout"
+            app:layout_constraintStart_toEndOf="@id/btnPlayAbout">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_share_link"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toTopOf="@id/btnPlayAbout"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Бөлісу"
+                android:gravity="center"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:textColor="@color/grey_400"
+                android:textSize="12dp"
+
+                />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="900dp"
+            android:layout_marginTop="310dp"
+            android:background="@drawable/background_about_movie"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/textTvTittleMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/sf_pro_display_bold_700"
+                android:text="Дала"
+                android:textColor="@color/grey_900"
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:id="@+id/textTvAdditionalInfoYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_medium_500"
+                android:text="2018"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/textTvTittleMovie"
+                app:layout_constraintTop_toBottomOf="@id/textTvTittleMovie"
+                />
+            <TextView
+                android:id="@+id/textTvGenres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium_500"
+                android:text="textView"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/textTvAdditionalInfoYear"
+                app:layout_constraintEnd_toEndOf="@id/view"
+                app:layout_constraintStart_toEndOf="@id/textTvAdditionalInfoYear"
+                app:layout_constraintTop_toTopOf="@id/textTvAdditionalInfoYear"/>
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTvAdditionalInfoYear"
+                />
+
+            <com.bosphere.fadingedgelayout.FadingEdgeLayout
+                android:id="@+id/fadingEdgeLayoutDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:fel_edge="bottom"
+                app:fel_size_bottom="120dp"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <TextView
+                    android:id="@+id/textTvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_medium_500"
+                    android:maxLines="7"
+                    android:text="  "
+                    android:textColor="@color/grey_400"/>
+
+            </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
+            <TextView
+                android:id="@+id/btnMoreDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:text="Толығырақ"
+                android:textColor="@color/primary_300"
+                app:layout_constraintStart_toStartOf="@id/fadingEdgeLayoutDescription"
+                app:layout_constraintTop_toBottomOf="@id/fadingEdgeLayoutDescription"/>
+
+            <TextView
+                android:id="@+id/textDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:fontFamily="@font/sf_pro_display_regular_400"
+
+                android:text="Режиcсeр: "
+                android:textColor="@color/grey_400"
+                app:layout_constraintStart_toStartOf="@id/btnMoreDescription"
+                app:layout_constraintTop_toBottomOf="@id/fadingEdgeLayoutDescription"
+                />
+
+            <TextView
+                android:id="@+id/textProducer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_regular_400"
+                android:text="Продюсер: "
+                android:textColor="@color/grey_400"
+                app:layout_constraintStart_toStartOf="@id/textDirector"
+                app:layout_constraintTop_toBottomOf="@id/textDirector"
+                />
+
+
+            <TextView
+                android:id="@+id/tvTextDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:fontFamily="@font/sf_pro_display_regular_400"
+                android:text="meow"
+                android:textColor="@color/grey_400"
+                app:layout_constraintStart_toEndOf="@id/textDirector"
+                app:layout_constraintTop_toTopOf="@+id/textDirector"
+                />
+
+            <TextView
+                android:id="@+id/tvTexProducer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:fontFamily="@font/sf_pro_display_regular_400"
+                android:text="meow"
+                android:textColor="@color/grey_400"
+                app:layout_constraintStart_toEndOf="@id/textProducer"
+                app:layout_constraintTop_toTopOf="@+id/textProducer"
+                />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textProducer"
+                />
+
+            <TextView
+                android:id="@+id/textBolimder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:text="Бөлімдер"
+                android:textColor="@color/grey_900"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+            <TextView
+                android:id="@+id/textTvBolimder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:fontFamily="@font/sf_pro_display_regular_400"
+                android:text=""
+                android:textColor="@color/grey_400"
+                app:layout_constraintStart_toStartOf="@+id/btnNextAllMovie"
+                app:layout_constraintTop_toTopOf="@+id/view2"/>
+
+            <ImageButton
+                android:id="@+id/btnNextAllMovie"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_button_next"
+                app:layout_constraintBottom_toBottomOf="@id/textBolimder"
+                app:layout_constraintEnd_toEndOf="@id/view2"
+                app:layout_constraintTop_toTopOf="@id/textBolimder"/>
+
+            <TextView
+                android:id="@+id/textScreenshots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:text="Скриншоттар"
+                android:textColor="@color/grey_900"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/view2"
+                app:layout_constraintTop_toBottomOf="@id/view2"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcViewScreenshots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/view2"
+                app:layout_constraintTop_toBottomOf="@id/textScreenshots"/>
+
+
+            <TextView
+                android:id="@+id/textSimilar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:text="Ұқсас телехикаялар"
+                android:textColor="@color/grey_900"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toBottomOf="@+id/rcViewScreenshots"/>
+
+            <TextView
+                android:id="@+id/btnSimilarMovieMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:text="Барлығы"
+                android:textColor="@color/primary_300"
+                app:layout_constraintEnd_toEndOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@id/textSimilar"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcViewSimilar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/view2"
+                app:layout_constraintTop_toBottomOf="@id/textSimilar"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+</ScrollView>
