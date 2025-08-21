@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ozinshe.data.SharedProvider
 import com.example.ozinshe.databinding.FragmentHomeBinding
 import com.example.ozinshe.presentation.login.LoginViewModel
@@ -27,7 +28,7 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         provideNavigationHost()?.apply {
-            setNavigationVisibility(false)
+            setNavigationVisibility(true)
         }
     }
 
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         provideNavigationHost()?.apply {
-            setNavigationVisibility(false)
+            setNavigationVisibility(true)
         }
 
         val token = SharedProvider(requireContext()).getToken()
@@ -58,6 +59,22 @@ class HomeFragment : Fragment() {
             binding.tvCategoryTitle2.text = it[1].categoryName
             adapterMoviesByCategory.submitList(it[1].movies)
         }
+
+        adapterMainMovie.setOnMovieClickListener(object :RcViewMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+        })
+
+
+        adapterMoviesByCategory.setOnMovieClickListener(object : RcViewMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+        })
+
 
     }
 

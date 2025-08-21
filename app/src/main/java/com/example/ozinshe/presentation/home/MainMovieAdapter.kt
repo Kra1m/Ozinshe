@@ -47,7 +47,7 @@ class MainMovieAdapter: RecyclerView.Adapter<MainMovieAdapter.MainMovieHolder>()
             binding.tvTextTittle.text = mainMovieItem.movie.name
             binding.tvTextDescription.text = mainMovieItem.movie.description
             itemView.setOnClickListener {
-                listenerClickAtItem?.onClick(mainMovieItem.id)
+                listenerClickAtItem?.onClick(mainMovieItem.movie.id)
             }
         }
     }

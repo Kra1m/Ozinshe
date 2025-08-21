@@ -37,11 +37,6 @@ class LoginFragment : Fragment() {
             binding.textErrorServerExistingEmail.visibility = View.GONE
             Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
 
-//            val sharedPref = requireContext().getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-//            sharedPref.edit {
-//                putString("accessToken", it.accessToken)
-//            }
-
             SharedProvider(requireContext()).saveToken(it.accessToken)
 
 
