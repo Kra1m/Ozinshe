@@ -84,4 +84,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
 
     implementation ("com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0")
+
+
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
 }

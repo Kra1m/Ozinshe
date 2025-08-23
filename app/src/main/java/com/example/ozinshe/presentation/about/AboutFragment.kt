@@ -10,9 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.navigation.navGraphViewModels
 import com.bumptech.glide.Glide
-import com.example.ozinshe.R
 import com.example.ozinshe.data.SharedProvider
 import com.example.ozinshe.databinding.FragmentAboutBinding
 import com.example.ozinshe.provideNavigationHost
@@ -51,6 +49,18 @@ class AboutFragment : Fragment() {
         viewModel.getMovieById(token, args.movieId)
 
         viewModel.moviesByIdResponse.observe(viewLifecycleOwner){
+
+            val adapterScreenshot = ImageAdapter()
+            adapterScreenshot.submitList(it.screenshots)
+            binding.rcViewScreenshots.adapter = adapterScreenshot
+            adapterScreenshot.setOnImageClickListener(object: RcViewImageCallback{
+                override fun onClick(link: String) {
+                    val action = AboutFragmentDirections.actionAboutFragmentToImageFragment(link)
+                    findNavController().navigate(action)
+                }
+            })
+
+
             Glide.with(requireContext())
                 .load(it.poster.link).into(binding.imageMovieAbout)
             binding.run {
@@ -105,9 +115,6 @@ class AboutFragment : Fragment() {
                     btnNextAllMovie.visibility = View.GONE
                 }
             }
-
-
-
 
         }
         viewModel.errorResponse.observe(viewLifecycleOwner){

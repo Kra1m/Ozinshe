@@ -1,9 +1,9 @@
-package com.example.ozinshe.data.model.mainMovieList
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Movie(
+data class Movy(
     @SerializedName("id")
     val id: Int, // 109
     @SerializedName("movieType")
@@ -25,9 +25,9 @@ data class Movie(
     @SerializedName("producer")
     val producer: String, // Қасиет Сақиолла
     @SerializedName("poster")
-    val poster: Poster,
+    val poster: PosterX,
     @SerializedName("video")
-    val video: Video,
+    val video: VideoX,
     @SerializedName("watchCount")
     val watchCount: Int, // 5762
     @SerializedName("seasonCount")
@@ -39,11 +39,11 @@ data class Movie(
     @SerializedName("lastModifiedDate")
     val lastModifiedDate: String, // 2022-07-14T05:50:03.680+00:00
     @SerializedName("screenshots")
-    val screenshots: List<Screenshot>,
+    val screenshots: List<ScreenshotX>,
     @SerializedName("categoryAges")
-    val categoryAges: List<CategoryAge>,
+    val categoryAges: List<CategoryAgeX>,
     @SerializedName("genres")
-    val genres: List<Genre>,
+    val genres: List<GenreX>,
     @SerializedName("categories")
     val categories: List<Category>,
     @SerializedName("favorite")

@@ -1,9 +1,9 @@
-package com.example.ozinshe.data.moviesCategories
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Category(
+data class CategoryX(
     @SerializedName("id")
     val id: Int, // 8
     @SerializedName("name")
@@ -13,5 +13,5 @@ data class Category(
     @SerializedName("link")
     val link: Any, // null
     @SerializedName("movieCount")
-    val movieCount: Int // 2
+    val movieCount: Any // null
 )

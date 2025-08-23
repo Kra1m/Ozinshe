@@ -1,9 +1,9 @@
-package com.example.ozinshe.data.model.MainByIdList
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Video(
+data class VideoX(
     @SerializedName("id")
     val id: Int, // 365
     @SerializedName("link")

@@ -91,5 +91,30 @@
             android:name="movieId"
             app:argType="integer"
             />
+        <action
+            android:id="@+id/action_aboutFragment_to_imageFragment"
+            app:destination="@id/imageFragment" >
+
+            <argument
+                android:name="imageLink"
+                app:argType="string"
+                />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.ozinshe.presentation.about.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image">
+
+        <argument
+            android:name="imageLink"
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_imageFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+
     </fragment>
 </navigation>

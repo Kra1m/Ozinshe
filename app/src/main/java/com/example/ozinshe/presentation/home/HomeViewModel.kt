@@ -9,8 +9,8 @@ import com.example.ozinshe.data.ApiService
 import com.example.ozinshe.data.ServiceBuilder
 import com.example.ozinshe.data.model.login.LoginRequest
 import com.example.ozinshe.data.model.login.LoginResponse
-import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponse
-import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModel
+import com.example.ozinshe.data.model.MainMoviesResponse
+import com.example.ozinshe.data.model.MoviesByCategoryMainModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -26,22 +26,22 @@ class HomeViewModel: ViewModel() {
     val errorResponse: LiveData<String> = _errorResponse
 
 
-    fun getMainMovies(token: String){
+    fun getMainMovies(token:String){
         viewModelScope.launch(Dispatchers.IO) {
             val response = ServiceBuilder.buildService(ApiService::class.java)
             runCatching { response.getMainMovies("Bearer $token") }
-                .onSuccess{
+                .onSuccess {
                     _mainMoviesResponse.postValue(it)
                 }
                 .onFailure {
                     _errorResponse.postValue(it.message)
                 }
-
         }
+
     }
 
     fun getMoviesByCategoryMain(token: String){
-        viewModelScope.launch (Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = ServiceBuilder.buildService(ApiService::class.java)
             runCatching { response.getMainMoviesByCategory("Bearer $token") }
                 .onSuccess {
@@ -52,5 +52,6 @@ class HomeViewModel: ViewModel() {
                 }
         }
     }
+
 
 }

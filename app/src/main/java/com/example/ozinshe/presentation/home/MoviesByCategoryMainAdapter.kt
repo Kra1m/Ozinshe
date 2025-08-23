@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponseItem
-import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModel
-import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModelItem
-import com.example.ozinshe.data.moviesCategories.Movy
+import com.example.ozinshe.data.model.MainMoviesResponseItem
+import com.example.ozinshe.data.model.MoviesByCategoryMainModel
+import com.example.ozinshe.data.model.MoviesByCategoryMainModelItem
+import com.example.ozinshe.data.model.Movy
 import com.example.ozinshe.databinding.ItemCategoryMovieBinding
 import com.example.ozinshe.databinding.ItemMainMoviesBinding
 

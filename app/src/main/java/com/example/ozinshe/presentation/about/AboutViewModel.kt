@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ozinshe.data.ApiService
 import com.example.ozinshe.data.ServiceBuilder
-import com.example.ozinshe.data.model.MainByIdList.MovieByIdResponse
-import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponseItem
-import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModel
+import com.example.ozinshe.data.model.MainMoviesResponseItem
+import com.example.ozinshe.data.model.MovieByIdResponse
+import com.example.ozinshe.data.model.MoviesByCategoryMainModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

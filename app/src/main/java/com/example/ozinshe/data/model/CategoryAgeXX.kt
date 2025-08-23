@@ -1,9 +1,9 @@
-package com.example.ozinshe.data.model.mainMovieList
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class CategoryAge(
+data class CategoryAgeXX(
     @SerializedName("id")
     val id: Int, // 2
     @SerializedName("name")

@@ -1,4 +1,4 @@
-package com.example.ozinshe.data.model.mainMovieList
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName

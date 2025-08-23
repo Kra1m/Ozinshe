@@ -1,9 +1,9 @@
-package com.example.ozinshe.data.moviesCategories
+package com.example.ozinshe.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Movy(
+data class Movie(
     @SerializedName("id")
     val id: Int, // 109
     @SerializedName("movieType")

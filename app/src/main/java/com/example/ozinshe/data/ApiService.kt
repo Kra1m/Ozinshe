@@ -1,13 +1,13 @@
 package com.example.ozinshe.data
 
-import com.example.ozinshe.data.model.MainByIdList.MovieByIdResponse
+import com.example.ozinshe.data.model.MainMoviesResponse
+import com.example.ozinshe.data.model.MovieByIdResponse
+import com.example.ozinshe.data.model.MoviesByCategoryMainModel
 import com.example.ozinshe.data.model.login.LoginRequest
 import com.example.ozinshe.data.model.login.LoginResponse
-import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponse
-import com.example.ozinshe.data.model.mainMovieList.MainMoviesResponseItem
+
 import com.example.ozinshe.data.model.register.RegistrationRequest
 import com.example.ozinshe.data.model.register.RegistrationResponse
-import com.example.ozinshe.data.moviesCategories.MoviesByCategoryMainModel
 import com.google.gson.stream.JsonToken
 import retrofit2.http.Body
 import retrofit2.http.GET
