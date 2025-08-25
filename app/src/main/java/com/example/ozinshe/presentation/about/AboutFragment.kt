@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.example.ozinshe.R
 import com.example.ozinshe.data.SharedProvider
 import com.example.ozinshe.databinding.FragmentAboutBinding
 import com.example.ozinshe.provideNavigationHost
@@ -63,9 +64,18 @@ class AboutFragment : Fragment() {
 
             Glide.with(requireContext())
                 .load(it.poster.link).into(binding.imageMovieAbout)
+
             binding.run {
                 btnBackAbout.setOnClickListener {
                     requireActivity().onBackPressed()
+                }
+                btnPlayAbout.setOnClickListener { click->
+                    if(it.video != null){
+                        val action = AboutFragmentDirections.actionAboutFragmentToVideoFragment(it.video?.link?:"")
+                        findNavController().navigate(action)
+                    }else{
+                        findNavController().navigate(R.id.seriesFragment)
+                    }
                 }
 
                 textTvTittleMovie.text = it.name

@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("androidx.navigation.safeargs.kotlin") version "2.7.7"
+    alias(libs.plugins.navigationSafeArgs)
 }
+
+//    id("androidx.navigation.safeargs.kotlin") version "2.7.7"
 
 android {
     namespace = "com.example.ozinshe"
@@ -85,6 +87,9 @@ dependencies {
 
     implementation ("com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0")
 
-
+    //for screenshot
     implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+
+    //video player
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")
 }
