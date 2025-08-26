@@ -3,6 +3,7 @@ package com.example.ozinshe.data
 import com.example.ozinshe.data.model.MainMoviesResponse
 import com.example.ozinshe.data.model.MovieByIdResponse
 import com.example.ozinshe.data.model.MoviesByCategoryMainModel
+import com.example.ozinshe.data.model.VideoResponse
 import com.example.ozinshe.data.model.login.LoginRequest
 import com.example.ozinshe.data.model.login.LoginResponse
 
@@ -16,6 +17,11 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
+    @POST("/auth/V1/signin")
+    suspend fun loginUser(@Body loginRequest: LoginRequest): LoginResponse
+
+    @POST("/auth/V1/signup")
+    suspend fun  registerUser(@Body registrationRequest: RegistrationRequest) : RegistrationResponse
     @GET("/core/V1/movies_main")
     suspend fun getMainMovies(@Header("Authorization") token: String) : MainMoviesResponse
 
@@ -26,10 +32,8 @@ interface ApiService {
     suspend fun getMovieById(@Header("Authorization") token: String,
                            @Path("id") id: Int): MovieByIdResponse
 
+    @GET("/core/V1/seasons/{id}")
+    suspend fun getSeriesById(@Header("Authorization") token: String,
+                              @Path("id") id: Int): List<VideoResponse>
 
-    @POST("/auth/V1/signin")
-    suspend fun loginUser(@Body loginRequest: LoginRequest): LoginResponse
-
-    @POST("/auth/V1/signup")
-    suspend fun  registerUser(@Body registrationRequest: RegistrationRequest) : RegistrationResponse
 }

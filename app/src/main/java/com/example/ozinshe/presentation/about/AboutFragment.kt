@@ -50,6 +50,25 @@ class AboutFragment : Fragment() {
         viewModel.getMovieById(token, args.movieId)
 
         viewModel.moviesByIdResponse.observe(viewLifecycleOwner){
+            binding.btnPlayAbout.setOnClickListener { click->
+                if(it.video != null){
+                    val action = AboutFragmentDirections.actionAboutFragmentToVideoFragment(it.video?.link?:"")
+                    findNavController().navigate(action)
+                }else{
+                    val action = AboutFragmentDirections.actionAboutFragmentToSeriesFragment(args.movieId)
+                    findNavController().navigate(action)
+                }
+            }
+
+            binding.btnNextAllMovie.setOnClickListener {
+                val action = AboutFragmentDirections.actionAboutFragmentToSeriesFragment(args.movieId)
+                findNavController().navigate(action)
+            }
+            binding.textTvBolimder.setOnClickListener {
+                val action = AboutFragmentDirections.actionAboutFragmentToSeriesFragment(args.movieId)
+                findNavController().navigate(action)
+            }
+
 
             val adapterScreenshot = ImageAdapter()
             adapterScreenshot.submitList(it.screenshots)
@@ -68,14 +87,6 @@ class AboutFragment : Fragment() {
             binding.run {
                 btnBackAbout.setOnClickListener {
                     requireActivity().onBackPressed()
-                }
-                btnPlayAbout.setOnClickListener { click->
-                    if(it.video != null){
-                        val action = AboutFragmentDirections.actionAboutFragmentToVideoFragment(it.video?.link?:"")
-                        findNavController().navigate(action)
-                    }else{
-                        findNavController().navigate(R.id.seriesFragment)
-                    }
                 }
 
                 textTvTittleMovie.text = it.name

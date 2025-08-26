@@ -109,6 +109,14 @@
                 app:argType="string" />
 
         </action>
+        <action
+            android:id="@+id/action_aboutFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment">
+            <argument
+                android:name="movieId"
+                app:argType="integer"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
@@ -138,5 +146,17 @@
         android:id="@+id/seriesFragment"
         android:name="com.example.ozinshe.presentation.about.SeriesFragment"
         android:label="fragment_series"
-        tools:layout="@layout/fragment_series" />
+        tools:layout="@layout/fragment_series">
+            <argument
+            android:name="movieId"
+            app:argType="integer"
+            />
+        <action
+            android:id="@+id/action_seriesFragment_to_videoFragment"
+            app:destination="@id/videoFragment">
+            <argument
+                android:name="videoLink"
+                app:argType="string" />
+        </action>
+    </fragment>
 </navigation>
