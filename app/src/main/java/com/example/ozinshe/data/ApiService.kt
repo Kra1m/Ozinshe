@@ -2,6 +2,7 @@ package com.example.ozinshe.data
 
 import com.example.ozinshe.data.model.MainMoviesResponse
 import com.example.ozinshe.data.model.MovieByIdResponse
+import com.example.ozinshe.data.model.MovieIdModel
 import com.example.ozinshe.data.model.MoviesByCategoryMainModel
 import com.example.ozinshe.data.model.VideoResponse
 import com.example.ozinshe.data.model.login.LoginRequest
@@ -11,7 +12,9 @@ import com.example.ozinshe.data.model.register.RegistrationRequest
 import com.example.ozinshe.data.model.register.RegistrationResponse
 import com.google.gson.stream.JsonToken
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.HTTP
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -22,6 +25,7 @@ interface ApiService {
 
     @POST("/auth/V1/signup")
     suspend fun  registerUser(@Body registrationRequest: RegistrationRequest) : RegistrationResponse
+
     @GET("/core/V1/movies_main")
     suspend fun getMainMovies(@Header("Authorization") token: String) : MainMoviesResponse
 
@@ -36,4 +40,12 @@ interface ApiService {
     suspend fun getSeriesById(@Header("Authorization") token: String,
                               @Path("id") id: Int): List<VideoResponse>
 
+    @POST("/core/V1/favorite")
+    suspend fun addFavorite(@Header(value = "Authorization") token: String,
+                            @Body movieBody: MovieIdModel): MovieIdModel
+
+    @HTTP(method = "DELETE", path = "/core/V1/favorite/", hasBody = true)
+    suspend fun deleteFavorite(
+        @Header(value = "Authorization") token: String,
+        @Body movieBody: MovieIdModel): Unit
 }
