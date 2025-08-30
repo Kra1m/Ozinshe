@@ -69,7 +69,6 @@ class AboutFragment : Fragment() {
                     AboutFragmentDirections.actionAboutFragmentToSeriesFragment(args.movieId)
                 findNavController().navigate(action)
             }
-
             binding.textBolimder.setOnClickListener {
                 Log.d("btnText", "no working")
                 val action =
