@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ozinshe</string>
     <string name="profile_language">Тіл</string>
@@ -10,7 +11,4 @@
     <string name="profile_dark_mode">Қараңғы режим</string>
     <string name="hello">Сәлем</string>
     <string name="login_account_login">Аккаунтқа кіріңіз</string>
-    <!-- TODO: Remove or change this placeholder text -->
-
-
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ozinshe</string>
+    <string name="profile_language">Language</string>
+    <string name="profile_my_profile">My profile</string>
+    <string name="toolbar_profile">Profile</string>
+    <string name="profile_personal_data">Personal data</string>
+    <string name="profile_edit_personal_data">Edit</string>
+    <string name="profile_change_password">Change password</string>
+    <string name="profile_terms_conditions">Terms and conditions</string>
+    <string name="profile_dark_mode">Dark mode</string>
+    <string name="hello">Hello</string>
+    <string name="login_account_login">Log in to your account</string>
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="32dp"
+    android:background="@drawable/background_about_movie"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/dividerBottomsheet"
+        android:layout_width="64dp"
+        android:layout_height="5dp"
+        android:background="@drawable/dividor_5dp_grey_cicrle"
+        android:backgroundTint="@color/grey_200"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_language"
+        android:fontFamily="@font/sf_pro_display_bold_700"
+        android:textSize="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/dividerBottomsheet"
+        app:layout_constraintStart_toStartOf="parent"/>
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/textLanguage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <LinearLayout
+            android:id="@+id/btnSelectEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textColor="@color/grey_900"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+
+            <View
+                android:id="@+id/imgIconEnglishSelected"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_check"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@drawable/dividor_1dp_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/btnSelectKazakh"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Қазақша"
+                android:textColor="@color/grey_900"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+
+            <View
+                android:id="@+id/imgIconKazakhSelected"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_check"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@drawable/dividor_1dp_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/btnSelectRussian"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Русский"
+                android:textColor="@color/grey_900"
+                android:fontFamily="@font/sf_pro_display_semibold_600"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+
+            <View
+                android:id="@+id/imgIconRussianSelected"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_check"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
