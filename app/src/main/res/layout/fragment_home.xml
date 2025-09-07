@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:text="Trendiler"
                 android:textSize="16dp"
-                android:textColor="@color/primary_900"
+                android:textColor="?attr/colorTertiaryFixed"
                 android:fontFamily="@font/sf_pro_display_bold_700"
                 />
 
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:text="Trendiler"
                 android:textSize="16dp"
-                android:textColor="@color/primary_900"
+                android:textColor="?attr/colorTertiaryFixed"
                 android:fontFamily="@font/sf_pro_display_bold_700"
                 />
 

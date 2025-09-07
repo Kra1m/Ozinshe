@@ -92,4 +92,7 @@ dependencies {
 
     //video player
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")
+
+    //SwitchButton
+    implementation ("com.kyleduo.switchbutton:library:2.1.0")
 }

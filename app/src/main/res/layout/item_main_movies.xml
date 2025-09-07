@@ -22,7 +22,7 @@
         android:fontFamily="@font/sf_pro_display_bold_700"
         android:textSize="14dp"
         android:text="Movie Tittle"
-        android:textColor="@color/grey_900"
+        android:textColor="?attr/colorTertiaryFixed"
         app:layout_constraintStart_toStartOf="@id/imgMainMovie"
         app:layout_constraintTop_toBottomOf="@id/imgMainMovie"
         />

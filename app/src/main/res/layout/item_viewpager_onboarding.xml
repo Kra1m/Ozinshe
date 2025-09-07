@@ -60,7 +60,7 @@
                 android:fontFamily="@font/sf_pro_display_bold_700"
                 android:gravity="center"
                 android:text="ÖZINŞE-ге қош келдің!"
-                android:textColor="@color/grey_900"
+                android:textColor="?attr/colorTertiaryFixed"
                 android:textSize="24dp" />
 
             <TextView

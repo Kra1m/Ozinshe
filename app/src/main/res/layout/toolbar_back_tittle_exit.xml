@@ -2,17 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="108dp"
+    android:background="?attr/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <ImageButton
         android:id="@+id/btnBackToolBar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_back"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="?attr/colorTertiaryFixed"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="24dp"
-        android:background="@color/transparent"
+        android:layout_marginStart="41dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/grey_900"
+        android:textColor="?attr/colorTertiaryFixed"
         android:fontFamily="@font/sf_pro_display_bold_700"
         android:textSize="16dp"/>
     

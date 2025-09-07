@@ -27,13 +27,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/white"
+        android:background="?attr/colorSecondary"
         android:clickable="false"
         app:itemIconSize="40dp"
         app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="@color/transparent"
-        app:itemIconTint="@color/grey_400"
         app:menu="@menu/bottom_menu"/>
+<!--        app:itemIconTint="@color/grey_400"-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Ozinshe" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.Ozinshe" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/grey_900</item>
+        <item name="colorSecondary">@color/grey_800</item>
+        <item name="colorSwitchThumbNormal">@color/primary_300</item>
+        <item name="colorTertiary">@color/grey_200</item>
+        <item name="colorTertiaryFixed">@color/white</item>
+        <item name="colorContainer">@color/grey_800</item>
     </style>
 </resources>
